@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+	<script type="text/javascript">
+
+	function wordCount(str) {
+		
+		str = str.split(" ");
+
+		return str.length;
+		/*This code works however it will return the incorrect number if any spaces are 
+		 included after the last word ie.("one two     ");
+		 */
+	}
+
+	function trythis(arr) {
+		var diff = arr[1] - arr[0];
+		var ratio = arr[1] / arr[0];
+
+		var arith = true;
+		var geo = true;
+
+		for (var i = 0; i < arr.length-1; i++) {
+			if (arr[i+1] - arr[i] != diff)
+				arith = false;
+			if(arr[i+1] / arr[i] != ratio)
+				geo = false;
+		}
+
+		if (arith === true)
+			return "arithmetic"
+		else if (geo === true)
+			return "geometric"
+		else 
+			return -1;
+
+	}
+
+	</script>
+</head>
+</html>

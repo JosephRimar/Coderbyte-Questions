@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+	<script type="text/javascript">
+
+	function numberAddition(str) {
+		var str = str.replace(/[^0-9]/g, " ").split(" ");
+		var counter = 0;
+		console.log(str);
+
+		 str = str.filter(function (a) {
+			return a !== "";});
+
+		 for (var i=0; i<str.length; i++)
+		 	counter += parseInt(str[i]);
+
+		 return counter;
+
+	}
+
+
+
+
+	</script>
+</head>
+</html>

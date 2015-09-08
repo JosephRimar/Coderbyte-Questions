@@ -1,0 +1,25 @@
+<!DOCTYPE hmtl>
+<head>
+	<script type="text/javascript">
+	//First way using a loop
+	function reverseString(string) {
+
+		var newString = "",
+			i = string.length -1;
+		for (i; i >= 0; i--) {
+			//add character to newString begining at the end of string and counting backwards
+			newString += string.charAt(i);
+		}
+		return newString;
+	}
+
+	//Second more efficient way 
+	function reverseString2(string) {
+		return string.split("").reverse().join("");
+	}
+
+
+
+	</script>
+</head>
+</hmtl>

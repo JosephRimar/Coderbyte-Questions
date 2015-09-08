@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+	<script type="text/javascript">
+
+	function arithGeo(array) {
+
+		var arith = (array[1] - array[0]);
+		var geo = (array[1] / array[0]);
+		var arithCounter = 0;
+		var geoCounter = 0;
+
+		for(var i = 1; i < array.length; i++) {
+			if (array[i] - array[i-1] == arith) 
+				arithCounter++;
+			else if (array[i] / array[i-1] == geo) 
+				geoCounter++;
+				
+		}
+
+		if (arithCounter +1 == array.length)
+			return "Arithmetic"
+		else if (geoCounter +2 == array.length)
+			return "Geometric";
+
+
+		return -1;
+	}
+
+	//GitHub example but doesnt work when array has more then 4 elements
+	//and elements in the middle do not follow the sequence
+	function arithGeo2(arr) { 
+		//if statement only compares the first two and last two elements
+  if ((arr[1] - arr[0]) === (arr[arr.length-1] - arr[arr.length-2])) {
+    return "Arithmetic";
+  } else if ((arr[1] / arr[0]) === (arr[arr.length-1] / arr[arr.length-2])) {
+    return "Geometric";
+  } else { 
+    return "-1"; 
+  }      
+}
+
+
+	</script>
+</head>
+</html>

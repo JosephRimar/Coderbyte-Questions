@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+	<script type="text/javascript">
+
+	function swapCase(str) {
+		var str = str.split("");
+		var lc = "abcdefghijklmnopqrstuvwxyz"
+		var uc = lc.toUpperCase();
+
+		for (var i = 0; i < str.length; i++) {
+			if (lc.indexOf(str[i]) !== -1)
+				str[i] = str[i].toUpperCase();
+			else if (uc.indexOf(str[i]) !== -1)
+				str[i] = str[i].toLowerCase();
+		}
+
+		console.log(str);
+		str = str.join("")
+
+		return str;
+	}
+
+
+
+
+	</script>
+</head>
+</html>

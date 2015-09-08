@@ -1,0 +1,72 @@
+<!DOCYTPE html>
+<head>
+	<script type="text/javascript">
+
+	function arrayAddition(arr) {
+        var arr = arr.sort(function (a,b) {
+            return a-b }),
+            numberTester = arr.pop(),
+             l = arr.length,
+             counter = 0;
+    
+        for(var i=0; i<l; i++) {
+            counter += arr[i];
+            for(var j=0; j <l; j++) {
+                if(i!==j) 
+                    counter += arr[j];
+                
+                if(counter === numberTester)
+                    return true;
+                
+            }
+            
+            for (var k = 0; k<l; k++) {
+                if (k!==i) {
+                    counter -= arr[k];
+                    if(counter === numberTester)
+                        return true;
+                }
+            }
+            
+            counter = 0;
+        }
+        return -1;
+    }
+
+    function arithGeo(arr) {
+        var difference = arr[1] - arr[0];
+        var ratio = arr[1] / arr[0];(2,4,6,12,92)
+        var arithCounter = 0;
+        var geoCounter = 0;
+
+        for(var i = 0; i < arr.length; i++) {
+            if(arr[i+1] - arr[i] === difference)
+                arithCounter ++;
+            if (arr[i+1] / arr[i] === ratio)
+                geoCounter ++;
+        }
+
+        if(arithCounter === arr.length-1)
+            return "Arith";
+        if(geoCounter === arr.length-1)
+            return "Geo"
+        return -1;
+
+    }
+
+	</script>
+</head>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

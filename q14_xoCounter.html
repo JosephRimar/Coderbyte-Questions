@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+	<script type="text/javascript">
+
+	function countXsOs(str) {
+
+		var xCounter = 0;
+		var oCounter = 0;
+		str = str.toLowerCase();
+
+		for (var i = 0; i < str.length; i++) {
+			if(str[i] === "x") 
+				xCounter ++;
+			else if (str[i] === "o")
+				oCounter ++;
+		}
+		if (xCounter == oCounter)
+			return "true";
+		else
+			return "false";
+	}
+
+
+
+	</script>
+</head>
+</html>

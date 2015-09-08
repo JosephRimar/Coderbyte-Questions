@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<head>
+	<script type="text/javascript">
+
+	function numberAddition(arr) {
+		var totalNum = arr.pop();
+		var temp = [0];
+		var compare;
+		var test;
+			
+		console.log(totalNum);
+
+		
+
+		for(var i = 0; i < arr.length; i++) {
+			temp.push(arr[i]);
+			console.log(temp);
+			
+		}
+
+		for (var y=arr.length-2; y>0; y --){
+			
+			compare = temp[y]
+			temp.splice(y,1,0);
+			console.log(temp);
+
+			temp.splice(y,1,compare);
+		}
+		
+		for(var x = 0; x < arr.length-1; x++) {
+			temp.shift();
+			console.log(temp);
+			
+		}
+		
+
+		return false;
+	}
+	function arrayAddidtion(arr) {
+		var target = arr.pop();
+
+		function subSet(target, arr) {
+			if (arr.length == 0) {
+				return target == 0;
+			}
+
+			var n = arr[0];
+			arr = arr.slice(1);
+			return subSet(target, arr) || subSet(target -n, arr);
+		}
+		if(subSet(target,arr))
+			return true;
+		return false;
+	}
+
+	function numbers(arr) {
+		arr.sort(function(a,b) {
+			return a-b});
+		
+		target = arr.pop()
+		var sum = 0;
+		for (var i = 0; i<arr.length; i++) {
+			for (var x = 0; x<arr.length; x++) {
+				if(i!=x) {
+					sum += arr[x]
+					console.log(sum);
+					if (sum == target) {
+						return true
+					}
+				}
+			}
+			sum=0;
+		}
+
+		return false;
+	}
+
+
+
+
+	</script>
+</head>
+</html>

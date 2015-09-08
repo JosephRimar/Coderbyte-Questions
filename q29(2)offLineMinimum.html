@@ -1,0 +1,31 @@
+<!DOCYTPE html>
+<head>
+	<script type="text/javascript">
+
+	function offLineMinimum(arr) {
+		var testArr = [],
+			finalArray = [],
+			eLocation = arr.indexOf("E"),
+			j;
+		
+		while (eLocation != -1) {
+			var i=0;
+			while(arr[i] !== "E") {
+				testArr.push(arr[i])
+				i++;
+			}
+			testArr.sort(function (a,b) {return a-b});
+			finalArray.push(testArr[0]);
+			j = testArr[0];
+			testArr = [];
+			arr.splice(eLocation, 1);
+			arr.splice(arr.indexOf(j),1);
+			eLocation = arr.indexOf("E");
+		}
+		return finalArray.join(",");
+	}
+	</script>
+
+	
+</head>
+</html>

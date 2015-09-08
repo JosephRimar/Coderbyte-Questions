@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+	<script type="text/javascript">
+
+		function simpleAdding(num) {
+
+			if (num <=1)
+			return num;
+			else return (num + simpleAdding(num-1))
+			//recursively add up the numbers until num is equal to 1		
+		}
+
+		//A more direct way of doing it without recursiveness
+		function simpleAddingTwo (num) {
+			var temp = [];
+			for (var i = 1; i <= num; i++) {
+				temp.push(i);
+			}
+
+			return temp.reduce(function (a,b) {
+				return a+b;
+			});
+		}
+
+		function another(arr) {
+			var arr = arr.sort()
+			
+
+			console.log(arr);
+		}
+
+		function primes(num) {
+			for (var i = 2; i < num; i++) {
+				if(num % i === 0) {
+					return false;
+				}
+			}
+			return true;
+		}
+
+	</script>
+</head>
+</html>

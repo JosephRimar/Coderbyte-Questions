@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<head>
+	<script type="text/javascript">
+
+	function simpleSymbols(str) {
+
+		var test = 'abcdefghijklmnopqrstuvwxyz';
+		var strArray = str.split("");
+		for (var i = 0; i < str.length; i++) {
+			if (test.indexOf(strArray[i]) != -1 && (strArray[i-1] != "+" || strArray[i+1] != "+"))
+				return false
+		}
+		return true
+	}
+
+	//from code wars. find duplicate in unsorted array;
+	function fd(arr) {
+		var num;
+		var duplicates = [];
+		for(var i = 0; i < arr.length; i++) {
+			num = arr[i];
+			for(var j = 0; j < arr.length; j++) {
+				//arr[j] = parseInt(arr[j]); strings and numbers are not duplicates
+				if(i !== j) {
+					if(arr[j] === num && duplicates.indexOf(arr[j]) === -1) {
+						 duplicates.push(arr[j]);
+					}
+				}
+			}
+
+		}
+		return duplicates;
+	}
+
+	function Person(name) {
+		this.name = name;
+		return name;
+
+	}
+
+	Person.prototype.greet = function(othername) {
+		return "Hi" + othername + ", my name is " + this.name;
+	}
+
+	function keys(pairs) {
+		var keys = [];
+		var values = [];
+		var str = "";
+		
+		//for(var k in obj) keys.push(k);
+		for(var k in pairs) {
+    		if(pairs.hasOwnProperty(k)) {
+      			keys.push(k);
+      		}
+    	}
+		
+		//for (var v in obj) values.push(obj[v]);
+		for (var v in pairs)  {
+      		if(pairs.hasOwnProperty(v)) {
+        		values.push(pairs[v]);
+      		}
+    	}
+		
+	for(var i = 0; i < keys.length; i++) {
+		str += keys[i];
+		str += " = ";
+		str += values[i];
+		str += ",";
+
+	}
+	
+	str = str.replace(/,\s*$/, "");
+	return str;
+
+	}
+
+	function odd(arr) {
+		return arr.filter(function (n) {
+			return (n %2);
+		})
+	}
+
+	function nameSwap(name) {
+		return name.split(" ").reverse().join(" ");
+		
+	}
+
+function lengths(str) {
+	return str.split(" ").map(function(v) {return v + " " + v.length});
+	// "we will be" returns "we 2 will 3 be 4".
+
+}
+	</script>
+</head>
+</html>
+
+
+
+
+
+
+

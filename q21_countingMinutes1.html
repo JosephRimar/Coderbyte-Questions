@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<head>
+	<script type="text/javascript">
+
+	function countingMinutes(str) {
+		var hour1 	=0, 
+			hour2 	=0,
+			minute1 =0,
+			minute2 =0,
+			time1	=0,
+			time2	=0,
+			day = (24 * 60),
+			totalTime;
+		
+		
+
+		
+		console.log(str);
+		str = str.replace(/:/g, ".");
+		temp = str.split("-");
+		
+		hour1 += parseFloat(temp[0]);
+		hour2 += parseFloat(temp[1]);
+
+		
+		if (temp[0].indexOf("p") != -1)
+			hour1 += 12;
+		if(temp[1].indexOf("p") != -1 && temp[1].indexOf("12.") < 0)
+			hour2 += 12;
+		
+		
+		console.log("Hour1: " + hour1);
+		console.log("hour2: " + hour2);
+		
+		if (hour1 > 1) 
+			minute1 = Math.round(hour1 % Math.floor(hour1) * 100);
+		 else 
+			minute1 = Math.round(hour1* 100);
+		if (hour2 > 1)
+			minute2 = Math.round(hour2 % Math.floor(hour2) * 100);
+		else 
+			minute2 = Math.round(hour2* 100);
+		console.log("minute1 " + minute1 + "minute2 " + minute2);
+
+		time1 = (Math.floor(hour1) * 60 + minute1);
+		time2 = (Math.floor(hour2) * 60 + minute2);
+		
+		
+		
+		var difference = (time1 - time2);
+		console.log(difference);
+
+		if (time1 > time2)
+			totalTime = (day - difference);
+		else 
+			totalTime = difference;
+		
+
+
+		return Math.abs(totalTime);
+		
+	
+	}
+
+	function countNumbers2(str) {
+
+		var hour1 = 0;
+		var hour2 = 0;
+		str = str.replace(/:/g, ".");
+		temp = str.split("-");
+		hour1 += parseFloat(temp[0]);
+		hour2 += parseFloat(temp[1]);
+
+		if (temp[0].indexOf("p") != -1 && temp[0].indexOf("12.") < 0)
+			hour1 += 12;
+		if(temp[1].indexOf("p") != -1 && temp[1].indexOf("12.") < 0)
+			hour2 += 12;
+		if(temp[0].indexOf("a") != -1 && temp[0].indexOf("12.") != -1)
+			hour1 -= 12;
+		if(temp[1].indexOf("a") != -1 && temp[1].indexOf("12.") != -1)
+			hour2 -= 12;
+
+		
+
+
+		console.log(temp);
+		console.log("Hour1: " + hour1 + " Hour2: " + hour2);
+
+
+
+
+
+	}
+	
+
+
+
+
+	</script>
+</head>
+</html>

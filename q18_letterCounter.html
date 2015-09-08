@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head>
+	<script type="text/javascript">
+
+	function letterCount(str) {
+
+		var words = str.toLowerCase().split(" ");
+		var result = -1,
+			largestCount = 1;
+
+		
+		function getWordRepeatCount(str) {
+			var counts = {};
+			for (var i = 0; i < str.length; i++) {
+				var chars = str[i];
+				counts[chars] = (counts[chars] || 0) +1;
+			}
+			var max = 0;
+			for (var c in counts) {
+				if(counts[c] > max)
+					max = counts[c];
+			}
+			return max;
+		}
+
+		for (var i = 0; i < words.length; i++) {
+			var word = words[i];
+			var repeat = getWordRepeatCount(word);
+			if (repeat > largestCount) {
+				largestCount = repeat;
+				result = word;
+
+			}
+		}
+		return result;
+
+	}
+ //This solution was taken from Jeff Millers JavaScript online and slightly modified to fit the test.
+ //It works for most cases until the test number become very large (ie 987654321);	
+var permArr = [], usedChars = [];
+function permute(input) {
+
+  //convert input into a char array (one element for each character)
+  var i, ch, chars = input.toString().split("");
+  for (i = 0; i < chars.length; i++) {
+    //get and remove character at index "i" from char array
+    ch = chars.splice(i, 1);
+    //add removed character to the end of used characters
+    usedChars.push(ch);
+    //when there are no more characters left in char array to add, add used chars to list of permutations
+    if (chars.length == 0) permArr[permArr.length] = usedChars.join("");
+    //send characters (minus the removed one from above) from char array to be permuted
+    permute(chars.join(""));
+    //add removed character back into char array in original position
+    chars.splice(i, 0, ch);
+    //remove the last character used off the end of used characters array
+    usedChars.pop();
+  }
+  // permArr = permArr.sort(function(a,b){ return b-a});too hard on computer lol
+  for(var j =permArr.length-1; j > 0; j --) {
+  	
+  	if (permArr[j] > input)
+  		return parseInt(permArr[j]);
+  	
+  }
+  return -1;
+}
+
+
+
+
+	</script>
+</head>
+</html>

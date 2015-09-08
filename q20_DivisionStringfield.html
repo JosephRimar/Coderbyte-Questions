@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+	<script type="text/javascript">
+
+	function divisionStringfield(num1, num2) {
+		//The string should return only whole numbers
+		var myNumber = Math.round(num1 / num2);
+		myNumber = myNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	
+		return myNumber;
+	}
+
+	//Complete the same function without using a regEx
+	function tryAgain(num1, num2) {
+		var myNumber = Math.round(num1/num2).toString();
+		return myNumber.length<3 ? myNumber : myNumber.split("").reverse().map(function(v,i) {	return (i%3===0 && i > 0) ? v + "," : v
+		}).reverse().join("");
+	}
+	//convert any whole number to 
+	function numberWithCommas(num) {
+		var numString = num.toString();
+		return  numString.length<3  ? numString : numString.split("").reverse().map(function(v,i) {	return (i%3===0 && i > 0) ? v + "," : v
+		}).reverse().join("");
+	}
+	</script>
+</head>
+</html>

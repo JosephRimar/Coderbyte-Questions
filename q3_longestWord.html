@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+	<script type="text/javascript">
+
+	function longestWord(sentance) {
+		
+		sentance = sentance.replace(/[^\w\s]|_/g, ""); //Removes all punctuation and special characters
+		var senArray = sentance.split(" ");
+		
+
+		var sortedArray = senArray.sort(function(a,b) {
+			/*if function returns a value greater then 0 b will be moved to a 
+				lower index then a;*/
+			return (b.length - a.length);
+		});
+
+		console.log(sortedArray);
+		return sortedArray[0];
+
+	}
+	</script>
+</head>
+</html>

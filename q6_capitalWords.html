@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+	<script type="text/javascript">
+
+		function capitaliseWords(str) {
+			str = str.split(" ");
+			var temp = [];
+			for (var i = 0, x = str.length; i < x; i++){
+			temp += str[i].charAt(0).toUpperCase() + str[i].substring(1) + " ";
+
+			}
+			return temp;
+		}
+		//Achieve the same result using map
+		function capitaliseWords2(str) { 
+	
+  		return str.split(" ").map(function (a) {
+    		return a[0].toUpperCase() + a.substring(1, a.length) }).join(" ");
+  		}
+	</script>
+</head>
+</html>
